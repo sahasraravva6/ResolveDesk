@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ResolveDesk: Run Flask",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe",
+      "args": ["app.py"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "ResolveDesk: Test",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest", "-q"],
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

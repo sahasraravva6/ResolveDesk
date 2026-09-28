@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ef">
+  <title>ResolveDesk | Support that remembers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="ResolveDesk overview"><span class="brand-mark">R</span><span>Resolve<span class="brand-light">Desk</span></span></a>
+      <div class="workspace-label">WORKSPACE <span class="workspace-dot"></span></div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <button data-page="overview" class="nav-link active"><span class="nav-icon">⌂</span>Overview</button>
+        <button data-page="inbox" class="nav-link"><span class="nav-icon">▤</span>Inbox<span id="inbox-count" class="nav-count">3</span></button>
+        <button data-page="customers" class="nav-link"><span class="nav-icon">♙</span>Customers</button>
+        <button data-page="tickets" class="nav-link"><span class="nav-icon">▣</span>Tickets</button>
+        <button data-page="memory" class="nav-link"><span class="nav-icon">◷</span>Memory</button>
+        <button data-page="insights" class="nav-link"><span class="nav-icon">▥</span>Insights</button>
+      </nav>
+      <div class="sidebar-rule"></div>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="primary-nav" aria-label="Workspace navigation">
+        <button data-page="team" class="nav-link" data-action="team"><span class="nav-icon">♧</span>Team</button>
+        <button data-page="settings" class="nav-link"><span class="nav-icon">⚙</span>Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="memory-status"><span class="status-orbit"></span><span><strong id="memory-status-title">Demo memory active</strong><small id="memory-status-subtitle">Customer context is ready</small></span><button class="icon-button tiny" id="memory-status-help" aria-label="Memory status details" title="Memory status details">i</button></div>
+        <button class="profile-button" id="profile-menu"><span class="avatar avatar-wine">AM</span><span class="profile-copy"><strong id="user-name">Alex Morgan</strong><small>Support Specialist</small></span><span class="profile-dots">···</span></button>
+      </div>
+    </aside>
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumbs"><span>ResolveDesk</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="topbar-actions">
+          <label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search tickets, customers..." aria-label="Search tickets and customers"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" id="notifications" aria-label="Notifications" title="Notifications">♧<i></i></button>
+          <span class="topbar-divider"></span>
+          <button class="avatar avatar-wine avatar-small" id="top-avatar" aria-label="Account menu">AM</button>
+        </div>
+      </header>
+      <div class="page-content" id="page-content" aria-live="polite">
+        <div class="loading-state"><span class="spinner"></span>Loading your workspace</div>
+      </div>
+    </main>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div class="modal-layer" id="modal-layer" hidden></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>
